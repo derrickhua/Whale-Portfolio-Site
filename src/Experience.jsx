@@ -2,7 +2,7 @@ import { useThree, extend, useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import Sea from './Sea'
-
+import { Perf } from 'r3f-perf'
 extend({ OrbitControls })
 
 export default function Experience()
@@ -24,6 +24,7 @@ export default function Experience()
     })
 
     return <>
+        <Perf position="top-left" />
         <orbitControls args={ [ camera, gl.domElement ] } />
 
         <directionalLight position={ [ 1, 2, 3 ] } intensity={ 1.5 } />

@@ -9,12 +9,12 @@ export default function Sea() {
         () => ({
             uTime: { value: 0 },
         
-            uBigWavesElevation: { value: 0.1 },
+            uBigWavesElevation: { value: 0.05 },
             uBigWavesFrequency: { value: new THREE.Vector2(4, 1.5) },
             uBigWavesSpeed: { value: 0.75 },
     
-            uSmallWavesElevation: { value: 0.07 },
-            uSmallWavesFrequency: { value: 3 },
+            uSmallWavesElevation: { value: 0.04 },
+            uSmallWavesFrequency: { value: 2 },
             uSmallWavesSpeed: { value: 0.2 },
             uSmallIterations: { value: 4 },
     
@@ -33,7 +33,7 @@ export default function Sea() {
 
     return <>
     <mesh rotation-x={-Math.PI / 2} ref={actualSea}>
-        <planeGeometry args={[2, 2, 512, 512]} />
+        <planeGeometry args={[10, 50, 256, 1024]}/>
         <shaderMaterial
             fragmentShader={fragmentShader}
             vertexShader={vertexShader}
