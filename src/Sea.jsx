@@ -9,12 +9,12 @@ export default function Sea() {
         () => ({
             uTime: { value: 0 },
         
-            uBigWavesElevation: { value: 0.05 },
-            uBigWavesFrequency: { value: new THREE.Vector2(4, 1.5) },
+            uBigWavesElevation: { value: 0.1 },
+            uBigWavesFrequency: { value: new THREE.Vector2(0.975, 1.5) },
             uBigWavesSpeed: { value: 0.75 },
     
             uSmallWavesElevation: { value: 0.04 },
-            uSmallWavesFrequency: { value: 2 },
+            uSmallWavesFrequency: { value: 5 },
             uSmallWavesSpeed: { value: 0.2 },
             uSmallIterations: { value: 4 },
     

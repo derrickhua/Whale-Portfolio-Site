@@ -2,6 +2,7 @@ import { useThree, extend, useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import Sea from './Sea'
+import PalmIsland from './PalmTreeIsland'
 import { Perf } from 'r3f-perf'
 extend({ OrbitControls })
 
@@ -31,6 +32,7 @@ export default function Experience()
         <ambientLight intensity={ 0.5 } />
 
         <Sea />
+        <PalmIsland />
 
     </>
 }
