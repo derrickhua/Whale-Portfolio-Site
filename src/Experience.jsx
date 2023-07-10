@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import Sea from './Sea'
 import PalmIsland from './models/PalmTreeIsland'
 import CrabIsland from './models/CrabIsland'
+import VolcanoIsland from './models/VolcanoIsland'
 import { Perf } from 'r3f-perf'
 extend({ OrbitControls })
 
@@ -35,5 +36,6 @@ export default function Experience()
         <Sea />
         <PalmIsland />
         <CrabIsland />
+        <VolcanoIsland />
     </>
 }

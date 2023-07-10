@@ -4,7 +4,6 @@ import * as THREE from 'three'
 
 export default function CrabIsland() {
     const island = useGLTF("./CrabIsland.glb")
-    console.log(island)
     const islandTexture = useTexture("./CrabIsland.jpg")
     islandTexture.colorSpace = THREE.SRGBColorSpace
     islandTexture.flipY = false
