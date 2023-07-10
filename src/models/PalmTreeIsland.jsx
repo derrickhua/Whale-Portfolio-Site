@@ -10,6 +10,6 @@ export default function PalmIsland() {
     islandTexture.flipY = false
     island.materials[""].map = islandTexture
     return <>
-        <primitive object={island.scene} scale={0.15} position={[-2, -0.1,0]}/>
+        <primitive object={island.scene} scale={0.15} position={[-2, -0.1, 10]}/>
     </>
 }

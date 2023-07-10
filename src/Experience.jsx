@@ -5,6 +5,7 @@ import Sea from './Sea'
 import PalmIsland from './models/PalmTreeIsland'
 import CrabIsland from './models/CrabIsland'
 import VolcanoIsland from './models/VolcanoIsland'
+import Whale from './models/Whale'
 import { Perf } from 'r3f-perf'
 extend({ OrbitControls })
 
@@ -37,5 +38,6 @@ export default function Experience()
         <PalmIsland />
         <CrabIsland />
         <VolcanoIsland />
+        <Whale />
     </>
 }

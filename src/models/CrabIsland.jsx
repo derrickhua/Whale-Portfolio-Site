@@ -10,6 +10,6 @@ export default function CrabIsland() {
     island.materials['Crabby'].map = islandTexture
     island.materials['Sandy'].map = islandTexture
     return <>
-        <primitive object={island.scene} scale={0.2} position={[2, -0.5,-5]}/>
+        <primitive object={island.scene} scale={0.2} position={[2, -0.5,0]}/>
     </>
 }
