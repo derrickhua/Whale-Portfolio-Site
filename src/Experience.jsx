@@ -2,7 +2,8 @@ import { useThree, extend, useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import Sea from './Sea'
-import PalmIsland from './PalmTreeIsland'
+import PalmIsland from './models/PalmTreeIsland'
+import CrabIsland from './models/CrabIsland'
 import { Perf } from 'r3f-perf'
 extend({ OrbitControls })
 
@@ -33,6 +34,6 @@ export default function Experience()
 
         <Sea />
         <PalmIsland />
-
+        <CrabIsland />
     </>
 }
