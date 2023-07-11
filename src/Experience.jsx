@@ -6,6 +6,7 @@ import PalmIsland from './models/PalmTreeIsland'
 import CrabIsland from './models/CrabIsland'
 import VolcanoIsland from './models/VolcanoIsland'
 import Whale from './models/Whale'
+import { Physics } from '@react-three/rapier'
 import { Perf } from 'r3f-perf'
 extend({ OrbitControls })
 
@@ -34,10 +35,14 @@ export default function Experience()
         <directionalLight position={ [ 1, 2, 3 ] } intensity={ 1.5 } />
         <ambientLight intensity={ 0.5 } />
 
-        <Sea />
-        <PalmIsland />
-        <CrabIsland />
-        <VolcanoIsland />
-        <Whale />
+
+        <Physics debug={true}>
+            <Sea />
+            <PalmIsland />
+            <CrabIsland />
+            <VolcanoIsland />
+            <Whale />            
+        </Physics>
+
     </>
 }

@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { useMemo, useRef } from 'react'
 import vertexShader from './shaders/waterShaders/vertexShader'
 import fragmentShader from './shaders/waterShaders/fragmentShader'
+import { RigidBody } from '@react-three/rapier'
 export default function Sea() {
     const actualSea = useRef()
     const uniforms = useMemo(
@@ -32,13 +33,24 @@ export default function Sea() {
     })
 
     return <>
-    <mesh rotation-x={-Math.PI / 2} ref={actualSea}>
-        <planeGeometry args={[10, 50, 256, 1024]}/>
-        <shaderMaterial
-            fragmentShader={fragmentShader}
-            vertexShader={vertexShader}
-            uniforms={uniforms}
-        />
-    </mesh>
+        <mesh rotation-x={-Math.PI / 2} ref={actualSea}>
+            <planeGeometry args={[10, 50, 256, 1024]}/>
+            <shaderMaterial
+                fragmentShader={fragmentShader}
+                vertexShader={vertexShader}
+                uniforms={uniforms}
+            />
+        </mesh>
+        <RigidBody type="fixed" 
+        restitution={0} 
+        friction={0} 
+        position={[0, 0, 0]}
+        >
+            <mesh rotation-x={-Math.PI / 2} position={[0, -0.2, 0]}>
+                <planeGeometry args={[10, 50, 256, 1024]}/>
+                <meshBasicMaterial opacity={0} transparent/>
+            </mesh>
+        </RigidBody>
+
     </>
 }
