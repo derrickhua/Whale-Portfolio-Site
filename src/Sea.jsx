@@ -42,12 +42,28 @@ export default function Sea() {
             />
         </mesh>
         <RigidBody type="fixed" 
-        restitution={0} 
+        restitution={1} 
         friction={0} 
         position={[0, 0, 0]}
         >
             <mesh rotation-x={-Math.PI / 2} position={[0, -0.2, 0]}>
-                <planeGeometry args={[10, 50, 256, 1024]}/>
+                <planeGeometry args={[10, 50]}/>
+                <meshBasicMaterial opacity={0} transparent/>
+            </mesh>
+            <mesh rotation-y={-Math.PI / 2} position={[5, 1, 0]}> 
+                <planeGeometry args={[50, 1.5]}/>
+                <meshBasicMaterial opacity={0} transparent/>
+            </mesh>
+            <mesh rotation-y={-Math.PI / 2} position={[-5, 1, 0]}> 
+                <planeGeometry args={[50, 1.5]}/>
+                <meshBasicMaterial opacity={0} transparent/>
+            </mesh>
+            <mesh position={[0, 1, -25]}>
+                <planeGeometry args={[11, 1.5]}/>
+                <meshBasicMaterial opacity={0} transparent/>
+            </mesh>
+            <mesh position={[0, 1, 25]}>
+                <planeGeometry args={[11, 1.5]}/>
                 <meshBasicMaterial opacity={0} transparent/>
             </mesh>
         </RigidBody>

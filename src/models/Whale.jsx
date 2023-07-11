@@ -44,11 +44,9 @@ export default function Whale() {
         } 
         if (leftward) {
             impulse.x -= impulseStrength
-            torque.y += torqueStrength
         } 
         if (rightward) {
             impulse.x += impulseStrength
-            torque.y -= torqueStrength
         } 
 
         whaleBody.current.applyImpulse(impulse)
@@ -86,7 +84,9 @@ export default function Whale() {
             colliders="cuboid" 
             position={[0, 0, 20]}
             restitution={0.2} 
-            friction={0}
+            friction={0.2}
+            linearDamping={0.5}
+            angularDamping={0.5}
             ref={whaleBody}
             canSleep={false} 
         >
