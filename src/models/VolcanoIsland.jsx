@@ -12,7 +12,6 @@ export default function VolcanoIsland() {
     island.materials[""].map = islandTexture
     island.materials[""].metalnessMap = islandTexture
 
-    console.log(island)
     return <>
     <RigidBody colliders='cuboid' type="fixed">
         <primitive object={island.scene} scale={1} position={[0, 0, -15]}/>

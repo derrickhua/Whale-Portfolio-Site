@@ -1,9 +1,10 @@
 import { RigidBody, useRapier } from "@react-three/rapier";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
-import { useGLTF, useTexture, useKeyboardControls } from "@react-three/drei";
+import { useGLTF, useTexture, useKeyboardControls, Html } from "@react-three/drei";
 import * as THREE from 'three'
 
+import Information from '../Information.jsx'
 export default function Whale() {
    
     // Importing Whale Model
@@ -33,14 +34,14 @@ export default function Whale() {
         const impulseStrength = 1 * delta
 
         const torque= {x:0, y:0, z:0}
-        const torqueStrength = 1 * delta
+        const torqueStrength = 0.75 * delta
         if(forward){
             impulse.z -= impulseStrength
-            torque.x -= torqueStrength
+            torque.x -= torqueStrength * 0.25
         } 
         if (backward) {
             impulse.z += impulseStrength
-            torque.x += torqueStrength
+            torque.x += torqueStrength * 0.25
         } 
         if (leftward) {
             impulse.x -= impulseStrength
@@ -59,11 +60,11 @@ export default function Whale() {
         const cameraPosition = new THREE.Vector3()
         cameraPosition.copy(whalePosition)
         cameraPosition.z += 2.25
-        cameraPosition.y += 0.65
+        cameraPosition.y += 0.2
 
         const cameraTarget = new THREE.Vector3()
         cameraTarget.copy(whalePosition)
-        cameraTarget.y += 0.25
+        cameraTarget.y += 0.15
 
         smoothCameraPosition.lerp(cameraPosition, 5 * delta)
         smoothCameraTarget.lerp(cameraTarget, 5 * delta)
@@ -92,6 +93,6 @@ export default function Whale() {
         >
             <primitive object={whale.scene} scale={0.25} />
         </RigidBody>
-        
+        <Information whale={whaleBody}/>
     </>
 }

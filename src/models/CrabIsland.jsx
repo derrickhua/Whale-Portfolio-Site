@@ -13,6 +13,6 @@ export default function CrabIsland() {
 
     return <>
         <primitive object={island.scene} scale={0.2} position={[2, -0.5,0]}/>
-        <CuboidCollider position={[2, -0.5,0]} args={[0.5, 1, 1]}/>
+        <CuboidCollider position={[2.25, -0.5,0]} args={[0.5, 1, 1]}/>
     </>
 }
