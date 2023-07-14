@@ -17,7 +17,7 @@ export default function Experience()
     const { camera, gl } = useThree()
 
     return <>
-        <Perf position="top-left" />
+        {/* <Perf position="top-left" /> */}
         <orbitControls args={ [ camera, gl.domElement ] } />
 
         <directionalLight position={ [ 1, 2, 3 ] } intensity={ 1.5 } />
