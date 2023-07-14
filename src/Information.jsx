@@ -1,4 +1,4 @@
-import {Html, Text3D, Float, Image } from "@react-three/drei";
+import {Html, Text3D, Float, Image, Center } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from 'three'
@@ -9,6 +9,8 @@ export default function Information({whale, setCameraPos}) {
     let volc = useRef()
     let links = useRef()
     let socialLinks = useRef()
+    let instructions = useRef()
+
     let palmPos = new THREE.Vector3(-2, -0.1, 10)
     let crabPos = new THREE.Vector3(2, -0.5,0)
     let volcPos = new THREE.Vector3(0, 0, -15)
@@ -48,6 +50,14 @@ export default function Information({whale, setCameraPos}) {
         if (whale && palm && crab && volc) {
             const whalePos = whale.current.translation()
             
+            // if whale is at starting position show controls and what to do 
+            if (whalePos.z < 18) {
+                instructions.current.visible = false
+            } else {
+                instructions.current.visible = true
+            }
+
+
             if (whalePos.x - palmPos.x < 0.5 &&  whalePos.x - palmPos.x > -0.5 && whalePos.z - palmPos.z < 2) {
                 palm.current.classList.add('active')
                 infoCam()
@@ -198,7 +208,35 @@ export default function Information({whale, setCameraPos}) {
                 />
           
             </Float>
-     
+        </group>
+
+        <group
+            ref={instructions}
+            visible={true}
+        >
+            <Center
+            position={[-1, 0.6, 20]}>
+                <Text3D
+                    scale={0.1}
+                    font="./Lobster_Regular.json"
+                >
+                    {`    USE\nW A S D\nTO MOVE`}
+                    <meshStandardMaterial color="lightblue" />
+
+                </Text3D>                  
+            </Center>
+            <Center
+            position={[1, 0.6, 20]}>
+                <Text3D
+                    scale={0.1}
+                    font="./Lobster_Regular.json"
+                >
+                    {`  PLEASE VISIT\n   THE CENTRE\nOF EACH ISLAND`}
+                    <meshStandardMaterial color="lightblue" />
+
+                </Text3D>                  
+            </Center>
+              
 
         </group>
 

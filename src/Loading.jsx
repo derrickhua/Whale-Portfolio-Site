@@ -8,6 +8,6 @@ export default function Loading() {
 
 
     return <div className="blue">
-        ...loading
+        loading...
     </div>
 }

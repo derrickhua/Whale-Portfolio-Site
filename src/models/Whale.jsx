@@ -75,11 +75,11 @@ export default function Whale() {
         state.camera.lookAt(smoothCameraTarget)
     })
 
-    const reset = () => {
-        whaleBody.current.setTranslation({x:0, y: 0, z: 20})
-        whaleBody.current.setLinvel({x:0, y: 0, z: 0})
-        whaleBody.current.setAngvel({x:0, y: 0, z: 0})
-    }
+    // const reset = () => {
+    //     whaleBody.current.setTranslation({x:0, y: 0, z: 20})
+    //     whaleBody.current.setLinvel({x:0, y: 0, z: 0})
+    //     whaleBody.current.setAngvel({x:0, y: 0, z: 0})
+    // }
 
     return <>
         
