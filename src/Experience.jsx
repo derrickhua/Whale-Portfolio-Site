@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { Physics } from '@react-three/rapier'
 import { Perf } from 'r3f-perf'
-
+import {Sky} from "@react-three/drei";
 
 import PalmIsland from './models/PalmTreeIsland'
 import CrabIsland from './models/CrabIsland'
@@ -31,6 +31,6 @@ export default function Experience()
             <VolcanoIsland />
             <Whale />            
         </Physics>
-
+        <Sky />
     </>
 }

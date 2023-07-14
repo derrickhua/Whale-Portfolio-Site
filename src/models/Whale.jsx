@@ -23,6 +23,8 @@ export default function Whale() {
     // Camera
     const [smoothCameraPosition] = useState(()=> new THREE.Vector3(10, 10, 10))
     const [smoothCameraTarget] = useState(()=> new THREE.Vector3())
+    const [cameraPos, setCameraPos] = useState([2.25, 0.2, 0.15])
+
 
     useFrame((state, delta) =>{
         /**
@@ -59,12 +61,12 @@ export default function Whale() {
 
         const cameraPosition = new THREE.Vector3()
         cameraPosition.copy(whalePosition)
-        cameraPosition.z += 2.25
-        cameraPosition.y += 0.2
+        cameraPosition.z += cameraPos[0]
+        cameraPosition.y += cameraPos[1]
 
         const cameraTarget = new THREE.Vector3()
         cameraTarget.copy(whalePosition)
-        cameraTarget.y += 0.15
+        cameraTarget.y += cameraPos[2]
 
         smoothCameraPosition.lerp(cameraPosition, 5 * delta)
         smoothCameraTarget.lerp(cameraTarget, 5 * delta)
@@ -93,6 +95,6 @@ export default function Whale() {
         >
             <primitive object={whale.scene} scale={0.25} />
         </RigidBody>
-        <Information whale={whaleBody}/>
+        <Information whale={whaleBody} setCameraPos={setCameraPos}/>
     </>
 }
